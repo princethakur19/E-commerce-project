@@ -27,8 +27,8 @@ const CartItems = () => {
                 <button className="cartitems-quantity">
                   {cartItems[e.id]} 
                 </button>
-                <p>{e.new_price * cartItems[e.id]}</p>
-                <img className="cartitems-reomve-icon"
+                <p>${e.new_price * cartItems[e.id]}</p>
+                <img className="cartitems-remove-icon"
                   src={remove_icon}
                   onClick={() => {
                     removeFromCart(e.id);
@@ -42,6 +42,35 @@ const CartItems = () => {
         }
         return null;
       })}
+      <div className="cartitems-down">
+        <div className="cartitems-total">
+            <h1>Cart Totals</h1>
+            <div>
+                <div className="cartitems-total-item">
+                    <p>Subtotal</p>
+                    <p>${0}</p>
+                </div>
+                <hr />
+                <div className="cartitems-total-item">
+                    <p>Shipping Fee</p>
+                    <p>Free</p>
+                </div>
+                <hr />
+                <div className="cartitems-total-item">
+                    <h3>Total</h3>
+                    <h3>${0}</h3>
+                </div>
+            </div>
+            <button>PROCEED TO CHECKOUT</button>
+        </div>
+        <div className="cartitems-promocode">
+            <p>If you have promo code, Enter it here</p>
+            <div className="cartitems-promobox">
+                <input type="text" placeholder="promo code" />
+                <button>Submit</button>
+            </div>
+        </div>
+      </div>
     </div>
   );
 };
